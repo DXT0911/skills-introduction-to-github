@@ -272,13 +272,13 @@ def validate_password(password):
         raise PasswordError("密码需包含数字")
     return True
 
-passwords = ["abc", "abcdefgh", "Abcdefgh", "Abcdefg1"]
-for pwd in passwords:
+test_inputs = ["abc", "abcdefgh", "Abcdefgh", "Abcdefg1"]
+for test_input in test_inputs:
     try:
-        validate_password(pwd)
-        print(f"'{pwd}' 密码有效")
+        validate_password(test_input)
+        print(f"'{test_input}' 验证通过")
     except PasswordError as e:
-        print(f"'{pwd}' 密码无效：{e}")
+        print(f"'{test_input}' 验证未通过：{e}")
 
 # 3. 安全读取 JSON
 import json
